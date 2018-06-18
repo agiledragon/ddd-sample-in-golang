@@ -1,7 +1,7 @@
 package service
 
 import (
-    "github.com/agiledragon/ddd-sample-in-golang/domain/model"
+    "github.com/agiledragon/ddd-sample-in-golang/cargo/domain/model"
     "sync"
 )
 

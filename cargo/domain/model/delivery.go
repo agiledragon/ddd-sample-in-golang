@@ -1,7 +1,7 @@
 package model
 
 import (
-    "github.com/agiledragon/ddd-sample-in-golang/domain/model/base"
+    "github.com/agiledragon/ddd-sample-in-golang/cargo/domain/model/base"
 )
 
 type Delivery struct {

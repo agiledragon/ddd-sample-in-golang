@@ -1,6 +1,6 @@
 package infra
 
-import "github.com/agiledragon/ddd-sample-in-golang/domain/model"
+import "github.com/agiledragon/ddd-sample-in-golang/cargo/domain/model"
 
 type CargoProviderImpl struct {
 

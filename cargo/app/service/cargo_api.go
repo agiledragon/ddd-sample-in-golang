@@ -1,7 +1,7 @@
 package service
 
 import (
-    "github.com/agiledragon/ddd-sample-in-golang/domain/service"
+    "github.com/agiledragon/ddd-sample-in-golang/cargo/domain/service"
 )
 
 func CreateCargo(cargoId string, afterDays uint) {

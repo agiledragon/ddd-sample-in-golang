@@ -1,10 +1,10 @@
-package ft
+package test
 
 import (
     "testing"
     . "github.com/smartystreets/goconvey/convey"
-    "github.com/agiledragon/ddd-sample-in-golang/domain/model"
-    "github.com/agiledragon/ddd-sample-in-golang/app/service"
+    "github.com/agiledragon/ddd-sample-in-golang/cargo/domain/model"
+    "github.com/agiledragon/ddd-sample-in-golang/cargo/app/service"
 )
 
 type SpyCargoProvider struct {
