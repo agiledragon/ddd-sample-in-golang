@@ -28,17 +28,18 @@ func (t *CargoService) Create(cargoId string, afterDays uint) {
 
 func (t *CargoService) Delay(cargoId string, days uint) {
     cargo := t.repo.Get(cargoId)
-    if cargo != nil {
-        cargo.Delay(days)
-        t.repo.Update(cargo)
-        t.provider.Confirm(cargo)
+    if cargo == nil {
+        panic("not found cargo by cargoId")
     }
+    cargo.Delay(days)
+    t.repo.Update(cargo)
+    t.provider.Confirm(cargo)
 }
 
 func (t *CargoService) GetAfterDays(cargoId string) uint {
     cargo := t.repo.Get(cargoId)
-    if cargo != nil {
-        return cargo.GetAfterDays()
+    if cargo == nil {
+        panic("not found cargo by cargoId")
     }
-    panic("invalid cargoId")
+    return cargo.GetAfterDays()
 }
