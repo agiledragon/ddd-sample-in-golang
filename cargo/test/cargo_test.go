@@ -5,7 +5,6 @@ import (
     . "github.com/smartystreets/goconvey/convey"
     "github.com/agiledragon/ddd-sample-in-golang/cargo/domain/model"
     "github.com/agiledragon/ddd-sample-in-golang/cargo/app/service"
-    "fmt"
 )
 
 type SpyCargoProvider struct {
