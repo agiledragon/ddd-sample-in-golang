@@ -12,7 +12,7 @@ type CargoService struct {
 
 var cs = &CargoService{}
 var once sync.Once
-func GetCargoServiceInstance() *CargoService {
+func GetCargoService() *CargoService {
     once.Do(func() {
         cs.repo = model.GetCargoRepo()
         cs.provider = model.GetCargoProvider()
@@ -42,4 +42,8 @@ func (t *CargoService) GetAfterDays(cargoId string) uint {
         panic("not found cargo by cargoId")
     }
     return cargo.GetAfterDays()
+}
+
+func (t *CargoService) DestroyCargo(cargoId string) {
+    t.repo.Remove(cargoId)
 }

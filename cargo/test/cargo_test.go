@@ -5,6 +5,7 @@ import (
     . "github.com/smartystreets/goconvey/convey"
     "github.com/agiledragon/ddd-sample-in-golang/cargo/domain/model"
     "github.com/agiledragon/ddd-sample-in-golang/cargo/app/service"
+    "fmt"
 )
 
 type SpyCargoProvider struct {
@@ -45,12 +46,14 @@ func TestCargo(t *testing.T) {
     const cargoId = "1"
 
     Convey("TestCargo", t, func() {
+
         Convey("create cargo", func() {
             const afterDays = 10
             service.CreateCargo(cargoId, afterDays)
             So(provider.cargoId, ShouldEqual, cargoId)
             So(provider.afterDays, ShouldEqual, afterDays)
             So(service.GetCargoAfterDays(cargoId), ShouldEqual, afterDays)
+            service.DestroyCargo(cargoId)
         })
 
         Convey("delay cargo", func() {
@@ -61,7 +64,7 @@ func TestCargo(t *testing.T) {
             So(provider.cargoId, ShouldEqual, cargoId)
             So(provider.afterDays, ShouldEqual, afterDays + days)
             So(service.GetCargoAfterDays(cargoId), ShouldEqual, afterDays + days)
-
+            service.DestroyCargo(cargoId)
         })
     })
 }

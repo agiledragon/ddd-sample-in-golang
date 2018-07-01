@@ -1,19 +1,19 @@
 package base
 
 type Entity struct {
-    Id  string
+    id string
 }
 
 func NewEntity(id string) Entity {
-    return Entity{Id: id}
+    return Entity{id: id}
 }
 
 func (t *Entity) GetId() string {
-    return t.Id
+    return t.id
 }
 
 func (t *Entity) Equal(other *Entity) bool {
-    return t.Id == other.Id
+    return t.id == other.id
 }
 
 func (t *Entity) NotEqual(other *Entity) bool {
