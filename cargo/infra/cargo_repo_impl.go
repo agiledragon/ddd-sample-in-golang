@@ -5,18 +5,18 @@ import "github.com/agiledragon/ddd-sample-in-golang/cargo/domain/model"
 type CargoRepoImpl struct {
 }
 
-func (t *CargoRepoImpl) Add(cargo *model.Cargo) {
+func (this *CargoRepoImpl) Add(cargo *model.Cargo) {
 
 }
 
-func (t *CargoRepoImpl) Get(cargoId string) *model.Cargo {
+func (this *CargoRepoImpl) Get(cargoId string) *model.Cargo {
 	return nil
 }
 
-func (t *CargoRepoImpl) Update(cargo *model.Cargo) {
+func (this *CargoRepoImpl) Update(cargo *model.Cargo) {
 
 }
 
-func (t *CargoRepoImpl) Remove(CargoId string) {
+func (this *CargoRepoImpl) Remove(CargoId string) {
 
 }

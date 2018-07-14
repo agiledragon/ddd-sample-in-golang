@@ -13,11 +13,11 @@ func newCargo(cargoId string, delivery Delivery) *Cargo {
 	return &Cargo{AggregateRoot: base.NewAggregateRoot(cargoId), Delivery: delivery}
 }
 
-func (t *Cargo) Delay(days uint) {
-	afterDays := t.GetAfterDays() + days
-	t.Delivery = Delivery{AfterDays: afterDays}
+func (this *Cargo) Delay(days uint) {
+	afterDays := this.GetAfterDays() + days
+	this.Delivery = Delivery{AfterDays: afterDays}
 }
 
-func (t *Cargo) GetAfterDays() uint {
-	return t.Delivery.AfterDays
+func (this *Cargo) GetAfterDays() uint {
+	return this.Delivery.AfterDays
 }

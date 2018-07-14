@@ -12,29 +12,29 @@ type SpyCargoProvider struct {
 	afterDays uint
 }
 
-func (t *SpyCargoProvider) Confirm(cargo *model.Cargo) {
-	t.cargoId = cargo.Id()
-	t.afterDays = cargo.GetAfterDays()
+func (this *SpyCargoProvider) Confirm(cargo *model.Cargo) {
+	this.cargoId = cargo.Id()
+	this.afterDays = cargo.GetAfterDays()
 }
 
 type FakeCargoRepo struct {
 	cargoes map[string]*model.Cargo
 }
 
-func (t *FakeCargoRepo) Add(cargo *model.Cargo) {
-	t.cargoes[cargo.Id()] = cargo
+func (this *FakeCargoRepo) Add(cargo *model.Cargo) {
+	this.cargoes[cargo.Id()] = cargo
 }
 
-func (t *FakeCargoRepo) Get(cargoId string) *model.Cargo {
-	return t.cargoes[cargoId]
+func (this *FakeCargoRepo) Get(cargoId string) *model.Cargo {
+	return this.cargoes[cargoId]
 }
 
-func (t *FakeCargoRepo) Update(cargo *model.Cargo) {
-	t.cargoes[cargo.Id()] = cargo
+func (this *FakeCargoRepo) Update(cargo *model.Cargo) {
+	this.cargoes[cargo.Id()] = cargo
 }
 
-func (t *FakeCargoRepo) Remove(cargoId string) {
-	delete(t.cargoes, cargoId)
+func (this *FakeCargoRepo) Remove(cargoId string) {
+	delete(this.cargoes, cargoId)
 }
 
 func TestCargo(t *testing.T) {

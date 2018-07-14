@@ -21,30 +21,30 @@ func GetCargoService() *CargoService {
 	return cs
 }
 
-func (t *CargoService) Create(cargoId string, afterDays uint) {
+func (this *CargoService) Create(cargoId string, afterDays uint) {
 	cargo := model.CargoFactory{}.Create(cargoId, afterDays)
-	t.repo.Add(cargo)
-	t.provider.Confirm(cargo)
+	this.repo.Add(cargo)
+	this.provider.Confirm(cargo)
 }
 
-func (t *CargoService) Delay(cargoId string, days uint) {
-	cargo := t.repo.Get(cargoId)
+func (this *CargoService) Delay(cargoId string, days uint) {
+	cargo := this.repo.Get(cargoId)
 	if cargo == nil {
 		panic("not found cargo by cargoId")
 	}
 	cargo.Delay(days)
-	t.repo.Update(cargo)
-	t.provider.Confirm(cargo)
+	this.repo.Update(cargo)
+	this.provider.Confirm(cargo)
 }
 
-func (t *CargoService) GetAfterDays(cargoId string) uint {
-	cargo := t.repo.Get(cargoId)
+func (this *CargoService) GetAfterDays(cargoId string) uint {
+	cargo := this.repo.Get(cargoId)
 	if cargo == nil {
 		panic("not found cargo by cargoId")
 	}
 	return cargo.GetAfterDays()
 }
 
-func (t *CargoService) DestroyCargo(cargoId string) {
-	t.repo.Remove(cargoId)
+func (this *CargoService) DestroyCargo(cargoId string) {
+	this.repo.Remove(cargoId)
 }

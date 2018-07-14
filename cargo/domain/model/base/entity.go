@@ -8,14 +8,14 @@ func NewEntity(id string) Entity {
 	return Entity{id: id}
 }
 
-func (t *Entity) Id() string {
-	return t.id
+func (this *Entity) Id() string {
+	return this.id
 }
 
-func (t *Entity) Equal(other *Entity) bool {
-	return t.id == other.id
+func (this *Entity) Equal(other *Entity) bool {
+	return this.id == other.id
 }
 
-func (t *Entity) NotEqual(other *Entity) bool {
-	return !t.Equal(other)
+func (this *Entity) NotEqual(other *Entity) bool {
+	return !this.Equal(other)
 }
