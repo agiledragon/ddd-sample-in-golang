@@ -1,9 +1,9 @@
 package base
 
 type AggregateRoot struct {
-    Entity
+	Entity
 }
 
 func NewAggregateRoot(id string) AggregateRoot {
-    return AggregateRoot{NewEntity(id)}
+	return AggregateRoot{NewEntity(id)}
 }
