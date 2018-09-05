@@ -21,19 +21,14 @@ func IsQuadrangle(points Points, lines []Line) bool {
     b := points[1]
     c := points[2]
     d := points[3]
+    ab := Points([]Point{a, b})
+    cd := Points([]Point{c, d})
+    ad := Points([]Point{a, d})
+    bc := Points([]Point{b, c})
     
-    ring_order_connected_without_cross := func(w, x, y, z Point) bool {
-        wx := Points([]Point{w, x})
-        yz := Points([]Point{y, z})
-        wz := Points([]Point{w, z})
-        xy := Points([]Point{x, y})
-        return ring_order_connected(w, x, y, z) &&
-            not(cross_connected(wx, yz)) &&
-            not(cross_connected(wz, xy))
-        
-    }
-    
-    return ring_order_connected_without_cross(a, b, c, d) &&
+    return ring_order_connected(a, b, c, d) &&
+        not(cross_connected(ab, cd)) &&
+        not(cross_connected(ad, bc)) &&
         not(in_same_line(a, b, c)) &&
         not(in_same_line(a, b, d)) &&
         not(in_same_line(a, c, d)) &&
