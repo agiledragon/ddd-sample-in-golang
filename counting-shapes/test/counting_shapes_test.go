@@ -16,7 +16,11 @@ func TestCountingShapes(t *testing.T) {
             num := service.CountingTriangles(points, lines)
             So(num, ShouldEqual, 24)
         })
-        
+    
+        Convey("counting quadrangles", func() {
+            num := service.CountingQuadrangles(points, lines)
+            So(num, ShouldEqual, 18)
+        })
     })
 }
 

@@ -7,3 +7,7 @@ import (
 func CountingTriangles(points string, lines []string) int {
     return len(service.CountingTriangles(points, lines))
 }
+
+func CountingQuadrangles(points string, lines []string) int {
+    return len(service.CountingQuadrangles(points, lines))
+}
