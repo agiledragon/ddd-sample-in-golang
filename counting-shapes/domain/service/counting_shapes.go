@@ -3,6 +3,7 @@ package service
 import (
     "github.com/agiledragon/ddd-sample-in-golang/counting-shapes/domain/model"
    // "fmt"
+    "fmt"
 )
 
 func CountingTriangles(points model.Points, lines []model.Line) []model.Points {
@@ -13,7 +14,7 @@ func CountingTriangles(points model.Points, lines []model.Line) []model.Points {
             matches = append(matches, set)
         }
     }
-    //fmt.Println("matches:", matches)
+    fmt.Println("matches:", matches)
     return matches
 }
 
