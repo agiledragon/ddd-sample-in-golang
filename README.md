@@ -9,7 +9,7 @@ DDD sample with OO
 
 DDD sample with FP
 
-![](shapes.png)
+<img src="shapes.png" width = "500" height = "500">
 
 ### counting triangles
 How many triangles can you see?
